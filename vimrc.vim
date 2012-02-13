@@ -15,12 +15,13 @@ let g:mapleader=";"
 set history=400
 set backspace=indent,eol,start
 set ruler
-set cursorline
 set showcmd
 set equalalways
 set foldmethod=indent
 
-language messages en.utf-8
+if has("win32") || has("win64")
+  language messages en.utf-8
+endif
 set encoding=utf-8
 set fileencodings=utf-8,chinese,latin-1
 
@@ -86,6 +87,7 @@ if has("gui_running")
 
   "去掉工具栏
   set guioptions=e
+  set cursorline
 
   "窗口最大化
   if has("win32")
@@ -95,6 +97,8 @@ if has("gui_running")
   else
     set fu
   endif
+else
+  set nocursorline
 endif
 
 if has("autocmd")
