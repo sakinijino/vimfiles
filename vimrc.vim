@@ -33,7 +33,9 @@ set shiftwidth=2
 set linespace=4
 
 set nowrap
-set colorcolumn=85
+if exists("&colorcolumn")
+  set colorcolumn=85
+endif
 
 "在输入命令时tab列出匹配项目
 set wildmenu
@@ -43,8 +45,10 @@ set wildmode=list:longest
 set nobackup
 set writebackup
 set backupdir=$VIMBACKUP,$TEMP,.
-set undofile
-set undodir=$VIMBACKUP,$TEMP
+if exists("&undofile")
+  set undofile
+  set undodir=$VIMBACKUP,$TEMP
+endif
 set directory=.,$TEMP
 
 "搜索忽略大小写
