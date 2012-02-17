@@ -118,6 +118,10 @@ else
   set autoindent
 endif
 
+"if has("win32") || has("win64")
+  "set shell=powershell.exe
+"endif
+
 "js语法高亮脚本的设置
 let g:javascript_enable_domhtmlcss=1
 
@@ -166,6 +170,10 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
+
+"surround
+let g:surround_60 = "<\r>" "<
+let g:surround_40 = "(\r)" "(
 
 "bufExplorer
 let g:bufExplorerSortBy='mru'
