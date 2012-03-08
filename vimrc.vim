@@ -79,7 +79,7 @@ if has("gui_running")
 	if has("win32") || has("win64")
     set guifont=Consolas:h12:cANSI
 	elseif has("mac")
-    set guifont=Monaco:h14:cANSI
+    set guifont=Monaco:h14
   else
     if has("gui_gtk2")
       set guifont=Luxi\ Mono\ 12
