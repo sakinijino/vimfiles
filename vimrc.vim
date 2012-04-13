@@ -23,7 +23,10 @@ if has("win32") || has("win64")
   language messages en.utf-8
 endif
 set encoding=utf-8
+set fileencoding=utf-8
+set fileformat=unix
 set fileencodings=utf-8,chinese,latin-1
+set fileformats=dos,unix
 
 set number
 set numberwidth=4
