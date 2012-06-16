@@ -23,7 +23,10 @@ if has("win32") || has("win64")
   language messages en.utf-8
 endif
 set encoding=utf-8
+set fileencoding=utf-8
+set fileformat=unix
 set fileencodings=utf-8,chinese,latin-1
+set fileformats=dos,unix
 
 set number
 set numberwidth=4
@@ -79,7 +82,7 @@ if has("gui_running")
 	if has("win32") || has("win64")
     set guifont=Consolas:h12:cANSI
 	elseif has("mac")
-    set guifont=Monaco:h14:cANSI
+    set guifont=Monaco:h14
   else
     if has("gui_gtk2")
       set guifont=Luxi\ Mono\ 12
@@ -105,17 +108,38 @@ else
   set nocursorline
 endif
 
+"缩进
 if has("autocmd")
   filetype plugin indent on
-
   autocmd BufReadPost *
     \ if line("'\"") > 1 && line("'\"") <= line("$") |
     \   exe "normal! g`\"" |
     \ endif
-
-  au FocusLost * :wa
 else
   set autoindent
+endif
+
+"失去焦点时自动保存
+if has("autocmd")
+  au FocusLost * :wa
+endif
+
+"自动去除utf8 bom
+if has("autocmd")
+  au BufReadPost *
+    \ if &fileencoding=="utf-8" && &bomb |
+    \   set nobomb |
+    \   write |
+    \ endif
+endif
+
+"win换行自动转换为unix换行
+if has("autocmd")
+  au BufReadPost *
+    \ if &fileformat=="dos" |
+    \   set fileformat=unix |
+    \   write |
+    \ endif
 endif
 
 "if has("win32") || has("win64")

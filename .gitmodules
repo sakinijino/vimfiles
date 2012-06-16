@@ -3,7 +3,7 @@
 	url = https://github.com/mileszs/ack.vim.git
 [submodule "bundle/javaScriptLint"]
 	path = bundle/javaScriptLint
-	url = https://github.com/joestelmach/javaScriptLint.vim.git
+	url = https://github.com/vim-scripts/lint.vim.git
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
