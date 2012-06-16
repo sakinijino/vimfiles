@@ -17,7 +17,7 @@ set backspace=indent,eol,start
 set ruler
 set showcmd
 set equalalways
-set foldmethod=indent
+"set foldmethod=indent
 
 if has("win32") || has("win64")
   language messages en.utf-8
